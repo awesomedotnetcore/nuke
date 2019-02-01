@@ -164,7 +164,6 @@ partial class Build : NukeBuild
         IReadOnlyCollection<string> definitions = null,
         IReadOnlyDictionary<string, string> replacements = null)
     {
-        var templateContent = ReadAllText(templateFile);
-        WriteAllText(templateFile, TemplateUtility.FillTemplate(templateContent, definitions, replacements));
+        TemplateUtility.FillTemplateFile(templateFile, definitions, replacements);
     }
 }
